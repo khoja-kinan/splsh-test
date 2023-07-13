@@ -1,6 +1,11 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { PlayerContextProvider } from "../../context/playerContext";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <PlayerContextProvider>
+      <Component {...pageProps} />
+    </PlayerContextProvider>
+  );
 }
